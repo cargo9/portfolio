@@ -60,8 +60,9 @@ export const projects = [
     tags: ['C++20', 'raylib', 'physics', 'CMake'],
     source: 'https://github.com/cargo9/Pin-3D',
     live: null,
-    video: null,
-    poster: null,
+    video: '/videos/pin3d.mp4',
+    poster: '/posters/pin3d.jpg',
+    duration: '0:40',
     placeholder: 'pin3d',
   },
   {
