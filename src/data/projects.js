@@ -95,8 +95,9 @@ export const projects = [
     tags: ['TypeScript', 'vanilla DOM', 'localStorage', 'Vercel'],
     source: 'https://github.com/cargo9/GymTracking',
     live: 'https://gym-tracking-three.vercel.app',
-    video: null,
-    poster: null,
+    video: '/videos/gym.mp4',
+    poster: '/posters/gym.jpg',
+    duration: '0:32',
     placeholder: 'gym',
   },
   {
