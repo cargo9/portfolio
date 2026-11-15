@@ -1,0 +1,118 @@
+// Все тексты интерфейса на двух языках. Ключи одинаковые в en и ru.
+// Тексты проектов — в projects.js, «о себе» — в profile.js.
+
+export const strings = {
+  en: {
+    meta: {
+      title: 'Yaroslav Suntsev — Portfolio',
+      description: 'Yaroslav Suntsev — C++, systems, hardware.',
+    },
+    ui: {
+      language: 'Language',
+      toLight: 'Switch to light theme',
+      toDark: 'Switch to dark theme',
+    },
+    nav: { about: 'about', stack: 'stack', work: 'work', contact: 'contact' },
+    hero: {
+      meta: ['// portfolio — 2026', 'C++ · systems · hardware', 'based in Germany'],
+      first: 'Yaroslav',
+      last: 'Suntsev',
+      lead: ['Software engineer writing ', 'C++', ', wiring microcontrollers and living in the terminal.'],
+      ctaWork: 'View projects',
+      ctaContact: 'Get in touch',
+      caption: 'live render',
+      torusAria: 'A rotating donut drawn with ASCII characters',
+      note: '└─ 3D drawn with characters, the way my C++ engine does it',
+    },
+    about: { label: 'about' },
+    stack: {
+      label: 'stack',
+      title: 'On the',
+      titleEm: 'belt',
+      desc: 'Languages, tools and things I tinker with. Hover over the belt to stop it.',
+    },
+    work: {
+      label: 'selected work',
+      title: 'Things I',
+      titleEm: 'build',
+      desc: 'Press play to watch a project in action. Each project takes me one layer deeper.',
+      source: 'source ↗',
+      live: 'live ↗',
+      soon: 'video coming soon',
+      soonAria: 'video coming soon',
+      preview: 'Preview of',
+      play: 'Play video:',
+      close: 'Close video',
+      videoOf: 'video',
+      linkSoon: 'link coming soon',
+    },
+    contact: {
+      label: 'contact',
+      question: 'Have an idea, a project or a role in mind?',
+      big: "Let's talk",
+      mail: 'mail:',
+    },
+    footer: {
+      copy: '© 2026 Yaroslav Suntsev',
+      fonts: 'Set in Unbounded, Instrument Serif & JetBrains Mono',
+      top: '↑ back to top',
+    },
+  },
+
+  ru: {
+    meta: {
+      title: 'Ярослав Сунцев — портфолио',
+      description: 'Ярослав Сунцев — C++, системы, железо.',
+    },
+    ui: {
+      language: 'Язык',
+      toLight: 'Включить светлую тему',
+      toDark: 'Включить тёмную тему',
+    },
+    nav: { about: 'обо мне', stack: 'стек', work: 'проекты', contact: 'контакты' },
+    hero: {
+      meta: ['// портфолио — 2026', 'C++ · системы · железо', 'живу в Германии'],
+      first: 'Ярослав',
+      last: 'Сунцев',
+      lead: ['Разработчик. Пишу на ', 'C++', ', собираю железо на микроконтроллерах и живу в терминале.'],
+      ctaWork: 'Смотреть проекты',
+      ctaContact: 'Связаться',
+      caption: 'живой рендер',
+      torusAria: 'Вращающийся бублик, нарисованный ASCII-символами',
+      note: '└─ 3D из символов — так же рисует мой движок на C++',
+    },
+    about: { label: 'обо мне' },
+    stack: {
+      label: 'стек',
+      title: 'На',
+      titleEm: 'ленте',
+      desc: 'Языки, инструменты и всё, с чем я вожусь. Наведи на ленту, чтобы её остановить.',
+    },
+    work: {
+      label: 'избранные работы',
+      title: 'Что я',
+      titleEm: 'делаю',
+      desc: 'Нажми ▶, чтобы посмотреть проект в деле. Каждый проект уводит меня на уровень глубже.',
+      source: 'код ↗',
+      live: 'сайт ↗',
+      soon: 'видео скоро',
+      soonAria: 'видео скоро будет',
+      preview: 'Превью проекта',
+      play: 'Смотреть видео:',
+      close: 'Закрыть видео',
+      videoOf: 'видео',
+      linkSoon: 'ссылка скоро будет',
+    },
+    contact: {
+      label: 'контакты',
+      question: 'Есть идея, проект или вакансия?',
+      big: 'Напиши мне',
+      mail: 'почта:',
+    },
+    footer: {
+      copy: '© 2026 Ярослав Сунцев',
+      fonts: 'Шрифты: Unbounded, Instrument Serif и JetBrains Mono',
+      top: '↑ наверх',
+    },
+  },
+}

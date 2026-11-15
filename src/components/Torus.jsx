@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { torus } from '../lib/ascii.js'
 import { usePrefersReducedMotion } from '../lib/usePrefersReducedMotion.js'
 
-export default function Torus() {
+export default function Torus({ label }) {
   const [tick, setTick] = useState(0)
   const reduce = usePrefersReducedMotion()
 
@@ -13,7 +13,7 @@ export default function Torus() {
   }, [reduce])
 
   return (
-    <pre role="img" aria-label="A rotating donut drawn with ASCII characters" className="torus">
+    <pre role="img" aria-label={label} className="torus">
       {torus(1 + tick * 0.05, 1 + tick * 0.025)}
     </pre>
   )

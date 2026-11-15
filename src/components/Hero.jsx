@@ -1,18 +1,22 @@
 import Torus from './Torus.jsx'
+import { useI18n } from '../lib/i18n.jsx'
 
 export default function Hero() {
+  const { t } = useI18n()
+  const [pre, accent, post] = t('hero.lead')
+
   return (
     <section aria-label="Intro" className="container hero">
       <div className="hero__meta">
-        <span>// portfolio — 2026</span>
-        <span>C++ · systems · hardware</span>
-        <span>based in Germany</span>
+        {t('hero.meta').map((m) => (
+          <span key={m}>{m}</span>
+        ))}
       </div>
 
       <h1 className="hero__title">
-        <span>Yaroslav</span>
+        <span>{t('hero.first')}</span>
         <span className="hero__title-row">
-          Suntsev
+          {t('hero.last')}
           <span className="cursor" aria-hidden="true" />
         </span>
       </h1>
@@ -20,14 +24,16 @@ export default function Hero() {
       <div className="hero__bottom">
         <div className="hero__intro">
           <p className="hero__lead">
-            Software engineer writing <em className="accent">C++</em>, wiring microcontrollers and living in the terminal.
+            {pre}
+            <em className="accent">{accent}</em>
+            {post}
           </p>
           <div className="hero__ctas">
             <a href="#work" className="btn btn--primary">
-              View projects <span aria-hidden="true">↓</span>
+              {t('hero.ctaWork')} <span aria-hidden="true">↓</span>
             </a>
             <a href="#contact" className="btn btn--ghost">
-              Get in touch
+              {t('hero.ctaContact')}
             </a>
           </div>
         </div>
@@ -36,11 +42,11 @@ export default function Hero() {
           <figcaption className="hero__caption">
             <span>┌─ torus.cpp</span>
             <span>
-              <span className="accent">●</span> live render
+              <span className="accent">●</span> {t('hero.caption')}
             </span>
           </figcaption>
-          <Torus />
-          <div className="hero__note">└─ 3D drawn with characters, like my C++ engine does it</div>
+          <Torus label={t('hero.torusAria')} />
+          <div className="hero__note">{t('hero.note')}</div>
         </figure>
       </div>
     </section>

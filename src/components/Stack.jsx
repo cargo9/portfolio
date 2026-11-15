@@ -1,19 +1,22 @@
 import SectionLabel from './SectionLabel.jsx'
 import { skills, areas } from '../data/profile.js'
+import { useI18n } from '../lib/i18n.jsx'
 
 const loop1 = [...skills, ...skills]
-const loop2 = [...areas, ...areas, ...areas, ...areas]
 
 export default function Stack() {
+  const { t, tr } = useI18n()
+  const loop2 = [...areas, ...areas, ...areas, ...areas].map(tr)
+
   return (
     <section id="stack" className="section stack">
       <div className="container section__inner section__inner--stack">
-        <SectionLabel num="02">stack</SectionLabel>
+        <SectionLabel num="02">{t('stack.label')}</SectionLabel>
         <div className="section__head">
           <h2 className="h2">
-            On the <em className="h2__em">belt</em>
+            {t('stack.title')} <em className="h2__em">{t('stack.titleEm')}</em>
           </h2>
-          <p className="section__desc muted">Languages, tools and things I tinker with. Hover the belt to stop it.</p>
+          <p className="section__desc muted">{t('stack.desc')}</p>
         </div>
       </div>
 

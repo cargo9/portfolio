@@ -1,15 +1,17 @@
 import { placeholders } from '../lib/ascii.js'
+import { useI18n } from '../lib/i18n.jsx'
 
 // Превью проекта в карточке.
 // - есть video → обложка на паузе (затемнена) + большой ▶; клик открывает плеер (onOpen)
 // - нет video  → ASCII-заглушка
 export default function VideoPreview({ project, onOpen }) {
+  const { t } = useI18n()
   if (project.video) {
     return (
       <button
         type="button"
         className="media media--video"
-        aria-label={`Play video: ${project.title}${project.duration ? `, ${project.duration}` : ''}`}
+        aria-label={`${t('work.play')} ${project.title}${project.duration ? `, ${project.duration}` : ''}`}
         onClick={(e) => onOpen(project, e.currentTarget)}
       >
         {project.poster && <img className="media__poster" src={project.poster} alt="" loading="lazy" />}
@@ -36,7 +38,7 @@ export default function VideoPreview({ project, onOpen }) {
   }
 
   return (
-    <div className="media" role="img" aria-label={`Preview of ${project.title} (video coming soon)`}>
+    <div className="media" role="img" aria-label={`${t('work.preview')} ${project.title} (${t('work.soonAria')})`}>
       <Placeholder kind={project.placeholder} />
       <span aria-hidden="true" className="media__scan" />
       <span aria-hidden="true" className="media__corner media__corner--tl">
@@ -46,7 +48,7 @@ export default function VideoPreview({ project, onOpen }) {
         [ video ] ┐
       </span>
       <span aria-hidden="true" className="media__corner media__corner--bl">
-        └ video coming soon
+        └ {t('work.soon')}
       </span>
     </div>
   )

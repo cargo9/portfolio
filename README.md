@@ -4,6 +4,10 @@ My personal portfolio site: C++, systems, hardware. Dark terminal-style design w
 
 Built with **React 19 + Vite**. No UI libraries.
 
+- **English / Russian:** English is the default. UI strings live in `src/data/strings.js`, and project texts are `{ en, ru }` pairs.
+- **Dark / light theme:** dark is the default. Both the theme and the language are remembered in the browser.
+- Links like `?lang=ru` or `?theme=light` open that version directly.
+
 ## Run
 
 ```sh

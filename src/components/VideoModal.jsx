@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useLayoutEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { useI18n } from '../lib/i18n.jsx'
 
 // Полноэкранный плеер.
 // Компьютер: видео «вылетает» из карточки в центр экрана (FLIP-анимация), крестик / Esc / клик по фону — закрыть.
@@ -15,6 +16,7 @@ const isTouchPhone = () =>
 const reducedMotion = () => window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
 
 export default function VideoModal({ project, originEl, onClose }) {
+  const { t } = useI18n()
   const backdropRef = useRef(null)
   const stageRef = useRef(null)
   const videoRef = useRef(null)
@@ -113,7 +115,7 @@ export default function VideoModal({ project, originEl, onClose }) {
   }, [close])
 
   return createPortal(
-    <div className="vm" role="dialog" aria-modal="true" aria-label={`${project.title} — video`}>
+    <div className="vm" role="dialog" aria-modal="true" aria-label={`${project.title} — ${t('work.videoOf')}`}>
       <div ref={backdropRef} className="vm__backdrop" onClick={close} />
       <div ref={stageRef} className="vm__stage">
         <video
@@ -125,7 +127,7 @@ export default function VideoModal({ project, originEl, onClose }) {
           playsInline
           preload="auto"
         />
-        <button ref={closeBtnRef} type="button" className="vm__close" aria-label="Close video" onClick={close}>
+        <button ref={closeBtnRef} type="button" className="vm__close" aria-label={t('work.close')} onClick={close}>
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
             <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
           </svg>

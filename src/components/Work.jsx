@@ -3,8 +3,10 @@ import SectionLabel from './SectionLabel.jsx'
 import ProjectCard from './ProjectCard.jsx'
 import VideoModal from './VideoModal.jsx'
 import { projects } from '../data/projects.js'
+import { useI18n } from '../lib/i18n.jsx'
 
 export default function Work() {
+  const { t } = useI18n()
   const [active, setActive] = useState(null) // { project, originEl }
 
   const open = useCallback((project, originEl) => setActive({ project, originEl }), [])
@@ -13,12 +15,12 @@ export default function Work() {
   return (
     <section id="work" className="section">
       <div className="container section__inner section__inner--work">
-        <SectionLabel num="03">selected work</SectionLabel>
+        <SectionLabel num="03">{t('work.label')}</SectionLabel>
         <div className="section__head">
           <h2 className="h2">
-            Things I <em className="h2__em">build</em>
+            {t('work.title')} <em className="h2__em">{t('work.titleEm')}</em>
           </h2>
-          <p className="section__desc muted">Press play to watch a project in action. Each one takes me a layer deeper.</p>
+          <p className="section__desc muted">{t('work.desc')}</p>
         </div>
         <div className="work-grid">
           {projects.map((p) => (

@@ -5,9 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Yaroslav Suntsev — C++, systems, hardware." />
     <title>Yaroslav Suntsev — Portfolio</title>
+    <script>
+      // тема и язык до первого кадра — чтобы светлая тема не мигала тёмной
+      try {
+        // ссылки вида ?lang=ru или ?theme=light сразу открывают нужную версию
+        var q = new URLSearchParams(location.search)
+        if (/^(en|ru)$/.test(q.get('lang'))) localStorage.setItem('lang', q.get('lang'))
+        if (/^(dark|light)$/.test(q.get('theme'))) localStorage.setItem('theme', q.get('theme'))
+        var th = localStorage.getItem('theme')
+        document.documentElement.dataset.theme = th === 'light' ? 'light' : 'dark'
+        if (localStorage.getItem('lang') === 'ru') document.documentElement.lang = 'ru'
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" />
   </head>
   <body>
     <div id="root"></div>
