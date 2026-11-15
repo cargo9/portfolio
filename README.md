@@ -24,7 +24,8 @@ src/
 ├── data/
 │   ├── projects.js   project cards: text, tags, links, video
 │   ├── profile.js    about text, skills on the belt
-│   └── links.js      email and socials
+│   ├── links.js      email and socials
+│   └── strings.js    UI texts in English and Russian
 ├── components/       Header, Hero, About, Stack, Work, ProjectCard,
 │                     VideoPreview (paused card), VideoModal (full-screen player), Contact, Footer
 ├── lib/ascii.js      ASCII torus renderer and placeholder art
